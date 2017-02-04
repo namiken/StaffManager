@@ -14,9 +14,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class Menu implements Listener {
     static ItemStack Vanish = new ItemStack(Material.GLASS);
     static {
+        // Vanish
         ItemMeta VanishMeta = Vanish.getItemMeta();
         VanishMeta.setDisplayName(ChatColor.DARK_GREEN + "Vanish");
         Vanish.setItemMeta(VanishMeta);
+        //TODO Command追加
     }
 
 
@@ -24,25 +26,23 @@ public class Menu implements Listener {
         Inventory inv = Bukkit.createInventory(null, 9, "OpMenu" );
         inv.setItem(0, Vanish);
         player.openInventory(inv);
-        System.out.println("open inv");
     }
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        System.out.println("1");
         Player player = (Player) event.getWhoClicked();
-
         ItemStack clicked = event.getCurrentItem();
 
-        Inventory invenotory = event.getInventory();
+        String command = null;
 
-        if (invenotory.getName().equals("OpMenu")) {
-            System.out.println("2");
-            if (Vanish.equals(clicked)) {
-                event.setCancelled(true);
-                player.closeInventory();
-                player.performCommand("vanish");
-            }
+        if (Vanish.equals(clicked)) {
+            command = "vanish";
+        }
+
+        if (command != null) {
+        event.setCancelled(true);
+         player.closeInventory();
+        player.performCommand(command);
         }
     }
 }
