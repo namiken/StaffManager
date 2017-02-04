@@ -1,0 +1,5 @@
+name: OPGUI
+main: net.l_bulb.opmenu.OpMenu
+version: 1.0.0
+commands:
+  opmenu:
