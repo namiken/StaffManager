@@ -13,17 +13,22 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class Menu implements Listener {
     static ItemStack Vanish = new ItemStack(Material.GLASS);
+    static ItemStack Fly = new ItemStack(Material.FEATHER);
     static {
         // Vanish
         ItemMeta VanishMeta = Vanish.getItemMeta();
         VanishMeta.setDisplayName(ChatColor.DARK_GREEN + "Vanish");
         Vanish.setItemMeta(VanishMeta);
-        //TODO Command追加
+        // Fly
+        ItemMeta FlyMeta = Fly.getItemMeta();
+        FlyMeta.setDisplayName("Fly");
+        Fly.setItemMeta(FlyMeta);
     }
 
     public void MenuCreate(Player player) {
         Inventory inv = Bukkit.createInventory(null, 9, "OpMenu" );
         inv.setItem(0, Vanish);
+        inv.setItem(2, Fly);
         player.openInventory(inv);
     }
 
@@ -36,6 +41,9 @@ public class Menu implements Listener {
 
         if (Vanish.equals(clicked)) {
             command = "vanish";
+        }
+        if (Fly.equals(clicked)) {
+            command = "fly";
         }
 
         if (command != null) {
