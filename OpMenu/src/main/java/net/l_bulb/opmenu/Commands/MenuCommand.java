@@ -5,13 +5,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import net.l_bulb.opmenu.Menu;
+import net.l_bulb.opmenu.Listener.MenuListener;
 
 public class MenuCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args ) {
         if (sender instanceof Player) {
-           new Menu().MenuCreate((Player) sender);
+           new MenuListener().MenuCreate((Player) sender);
         } else {
             sender.sendMessage("Cannot execute this command from console");
         }

@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu;
+package net.l_bulb.opmenu.Listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -11,7 +11,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class Menu implements Listener {
+public class MenuListener implements Listener {
     static ItemStack Vanish = new ItemStack(Material.GLASS);
     static ItemStack Fly = new ItemStack(Material.FEATHER);
     static {
