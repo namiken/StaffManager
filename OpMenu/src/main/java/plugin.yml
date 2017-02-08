@@ -2,4 +2,9 @@ name: OPMenu
 main: net.l_bulb.opmenu.OpMenu
 version: 1.0.0
 commands:
+  fly:
+    description: FlyMode
+    usage: /<command>
   menu:
+    description: Menu
+    usage: /<command>
