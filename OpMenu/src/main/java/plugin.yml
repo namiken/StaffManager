@@ -8,3 +8,6 @@ commands:
   menu:
     description: Menu
     usage: /<command>
+  staff:
+    description: Staff
+    usage: /<command>

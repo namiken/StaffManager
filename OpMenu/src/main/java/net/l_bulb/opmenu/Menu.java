@@ -21,7 +21,6 @@ public class Menu implements Listener {
         //TODO Command追加
     }
 
-
     public void MenuCreate(Player player) {
         Inventory inv = Bukkit.createInventory(null, 9, "OpMenu" );
         inv.setItem(0, Vanish);
