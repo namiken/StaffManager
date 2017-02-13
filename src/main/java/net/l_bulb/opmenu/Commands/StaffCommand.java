@@ -9,7 +9,7 @@ public class StaffCommand implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args ) {
         if (sender instanceof Player) {
         } else {
-            sender.sendMessage("Cannot execute this command from console");
+            sender.sendMessage("コンソールから実行できません。");
         }
         return true;
     }

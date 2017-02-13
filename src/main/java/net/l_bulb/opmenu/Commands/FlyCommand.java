@@ -12,7 +12,7 @@ public class FlyCommand implements CommandExecutor {
         if (sender instanceof Player) {
             toggleFly((Player) sender);
         } else {
-            sender.sendMessage("Cannot execute this command from console");
+            sender.sendMessage("コンソールから実行できません。");
         }
         return true;
     }

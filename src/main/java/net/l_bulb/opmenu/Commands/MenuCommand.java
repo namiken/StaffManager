@@ -13,7 +13,7 @@ public class MenuCommand implements CommandExecutor {
         if (sender instanceof Player) {
            new MenuListener().MenuCreate((Player) sender);
         } else {
-            sender.sendMessage("Cannot execute this command from console");
+            sender.sendMessage("コンソールから実行できません。");
         }
         return true;
     }
