@@ -10,6 +10,9 @@ import net.l_bulb.opmenu.Listener.MenuListener;
 public class MenuCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args ) {
+	if (!sender.hasPermission("staff.menu")) {
+	    
+	}
         if (sender instanceof Player) {
            new MenuListener().MenuCreate((Player) sender);
         } else {

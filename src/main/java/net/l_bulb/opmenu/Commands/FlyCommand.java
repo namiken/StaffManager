@@ -9,6 +9,9 @@ import org.bukkit.entity.Player;
 public class FlyCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+	if (!sender.hasPermission("staff.fly")) {
+	    
+	}
         if (sender instanceof Player) {
             toggleFly((Player) sender);
         } else {

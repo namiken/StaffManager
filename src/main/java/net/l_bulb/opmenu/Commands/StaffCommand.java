@@ -6,10 +6,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-public class StaffCommand implements CommandExecutor {
+public class StaffCommand implements CommandExecutor  {
     static ItemStack Compass = new ItemStack(Material.COMPASS);
     static ItemStack Shears = new ItemStack(Material.SHEARS);
 
@@ -26,8 +25,12 @@ public class StaffCommand implements CommandExecutor {
     }
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args ) {
+	if (!sender.hasPermission("staff.staff")) {
+
+	}
         if (sender instanceof Player) {
             inventoryClear(sender);
+            getStaffItem(sender);
         } else {
             sender.sendMessage("コンソールから実行できません。");
         }
@@ -39,11 +42,8 @@ public class StaffCommand implements CommandExecutor {
     }
 
     public static void getStaffItem(CommandSender sender) {
-	((Player) sender).getInventory().setItem(0, Compass);
+	((Player) sender).getInventory().setItem(0,Compass);
 	((Player) sender).getInventory().setItem(1, Shears);
 	sender.sendMessage(ChatColor.GREEN +"Welcome To Staff Mode");
-    }
-    public void FoodLevel(FoodLevelChangeEvent event) {
-	event.setCancelled(true);
     }
 }

@@ -5,9 +5,12 @@ commands:
   fly:
     description: FlyMode
     usage: /<command>
+    permission: staff.fly
   menu:
     description: Menu
     usage: /<command>
+    permission: staff.menu
   staff:
     description: Staff
     usage: /<command>
+    permission: staff.staff
