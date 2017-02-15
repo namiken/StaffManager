@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 public class StaffCommand implements CommandExecutor {
@@ -41,5 +42,8 @@ public class StaffCommand implements CommandExecutor {
 	((Player) sender).getInventory().setItem(0, Compass);
 	((Player) sender).getInventory().setItem(1, Shears);
 	sender.sendMessage(ChatColor.GREEN +"Welcome To Staff Mode");
+    }
+    public void FoodLevel(FoodLevelChangeEvent event) {
+	event.setCancelled(true);
     }
 }
