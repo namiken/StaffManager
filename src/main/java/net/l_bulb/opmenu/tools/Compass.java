@@ -13,13 +13,12 @@ public class Compass implements Listener{
 
     @EventHandler
     public void CompassLeftClickEvent(PlayerInteractEvent event) {
-	System.out.println("1");
 	Player player =event.getPlayer();
 	if(player.getItemInHand().getType() == Material.COMPASS) {
 	    Block target = getTargetBlock(player);
-
 	    if (target != null) {
-		System.out.println(target.getLocation());
+		event.getPlayer().teleport(target.getLocation());
+		event.getPlayer().sendMessage(ChatColor.GREEN + "[OpMenu]" + ChatColor.YELLOW +  " Teleported.");
 	    }
 	}
 
@@ -37,7 +36,7 @@ public class Compass implements Listener{
 	    }
 
 	}
-	player.sendMessage(ChatColor.RED +  "Block Not Found");
+	player.sendMessage(ChatColor.GREEN + "[OpMenu]" + ChatColor.RED +  " Block Not Found.");
 	return null;
     }
 
