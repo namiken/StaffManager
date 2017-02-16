@@ -17,8 +17,8 @@ public class Compass implements Listener{
 	if(player.getItemInHand().getType() == Material.COMPASS) {
 	    Block target = getTargetBlock(player);
 	    if (target != null) {
-		event.getPlayer().teleport(target.getLocation());
-		event.getPlayer().sendMessage(ChatColor.GREEN + "[OpMenu]" + ChatColor.YELLOW +  " Teleported.");
+		player.teleport(target.getLocation());
+		player.sendMessage(ChatColor.GREEN + "[OpMenu]" + ChatColor.YELLOW +  " Teleported.");
 	    }
 	}
 
