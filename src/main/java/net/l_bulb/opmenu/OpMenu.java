@@ -6,7 +6,8 @@ import net.l_bulb.opmenu.Commands.FlyCommand;
 import net.l_bulb.opmenu.Commands.MenuCommand;
 import net.l_bulb.opmenu.Commands.StaffCommand;
 import net.l_bulb.opmenu.Listener.MenuListener;
-import net.l_bulb.opmenu.Listener.StaffListener;;
+import net.l_bulb.opmenu.Listener.StaffListener;
+import net.l_bulb.opmenu.tools.Compass;;
 
 public class OpMenu extends JavaPlugin {
     @Override
@@ -16,5 +17,6 @@ public class OpMenu extends JavaPlugin {
         getCommand("menu").setExecutor(new MenuCommand());
         getServer().getPluginManager().registerEvents(new MenuListener(), this);
         getServer().getPluginManager().registerEvents(new StaffListener(), this);
+        getServer().getPluginManager().registerEvents(new Compass(), this);
     }
 }
