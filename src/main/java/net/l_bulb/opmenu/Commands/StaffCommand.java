@@ -7,30 +7,25 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 public class StaffCommand implements Listener,  CommandExecutor {
-    static ItemStack Compass = new ItemStack(Material.COMPASS);
-    static ItemStack Shears = new ItemStack(Material.SHEARS);
-
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args ) {
 	if (!sender.hasPermission("staff.staff")) {
-
 	}
         if (sender instanceof Player) {
+	    Player player = (Player) sender;
+	    player.sendMessage("player");
         } else {
             sender.sendMessage("コンソールから実行できません。");
         }
         return true;
     }
-    public static void inventoryClear(CommandSender sender) {
-	((Player) sender).getInventory().clear();
-	sender.sendMessage(ChatColor.RED + "インベントリを削除しました");
-    }
-
     public static void staffItems(Player player) {
 	PlayerInventory Inventory = player.getInventory();
 	Inventory.clear();
@@ -70,10 +65,22 @@ public class StaffCommand implements Listener,  CommandExecutor {
 	staffItems(player);
 	player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Enable!");
     }
+
     public static void onDisableStaffMode(Player player) {
 	player.setGameMode(GameMode.SURVIVAL);
 	player.getInventory().clear();
 	player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Disable!");
+    }
+
+    @EventHandler
+    public void rightClick(PlayerInteractEntityEvent event) { // Playerが左クリックした時
+	if(!(event.getRightClicked() instanceof Player)) {
+	    return;
+	}
+	Player Player1 = event.getPlayer();
+	Player Player2 = (Player)event.getRightClicked();
+	Player1.sendMessage("1");
+	Player2.sendMessage("2");
     }
 
 
