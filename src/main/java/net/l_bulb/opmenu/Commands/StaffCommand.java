@@ -28,36 +28,40 @@ public class StaffCommand implements Listener,  CommandExecutor {
     }
     public static void staffItems(Player player) {
 	PlayerInventory Inventory = player.getInventory();
-	Inventory.clear();
 	ItemStack ItemStack1 = new ItemStack(Material.COMPASS);
 	ItemStack ItemStack2 = new ItemStack(Material.BOOK);
 	ItemStack ItemStack3 = new ItemStack(Material.RECORD_3);
 	ItemStack ItemStack4 = new ItemStack(Material.INK_SACK);
 	ItemStack ItemStack5 = new ItemStack(Material.SHEARS);
+	ItemStack ItemStack6 = new ItemStack(Material.ICE);
 
 	ItemMeta ItemMeta1 = ItemStack1.getItemMeta();
 	ItemMeta ItemMeta2 = ItemStack2.getItemMeta();
 	ItemMeta ItemMeta3 = ItemStack3.getItemMeta();
 	ItemMeta ItemMeta4 = ItemStack4.getItemMeta();
 	ItemMeta ItemMeta5 = ItemStack5.getItemMeta();
+	ItemMeta ItemMeta6 = ItemStack6.getItemMeta();
 
 	ItemMeta1.setDisplayName(ChatColor.GOLD + "Teleport Compass");
 	ItemMeta2.setDisplayName(ChatColor.GOLD + "Inventory Check");
 	ItemMeta3.setDisplayName(ChatColor.GOLD + "Teleport Random");
 	ItemMeta4.setDisplayName(ChatColor.GOLD + "Staff GUI");
 	ItemMeta5.setDisplayName(ChatColor.GOLD + "Health Check");
+	ItemMeta6.setDisplayName(ChatColor.GOLD + "Freeze Player");
 
 	ItemStack1.setItemMeta(ItemMeta1);
 	ItemStack2.setItemMeta(ItemMeta2);
 	ItemStack3.setItemMeta(ItemMeta3);
 	ItemStack4.setItemMeta(ItemMeta4);
 	ItemStack5.setItemMeta(ItemMeta5);
+	ItemStack6.setItemMeta(ItemMeta6);
 
 	Inventory.setItem(0, ItemStack1);
 	Inventory.setItem(1, ItemStack2);
 	Inventory.setItem(7, ItemStack3);
 	Inventory.setItem(8, ItemStack4);
 	Inventory.setItem(2, ItemStack5);
+	Inventory.setItem(2, ItemStack6);
     }
 
     public static void onEnableStaffMode(Player player) {
@@ -71,7 +75,6 @@ public class StaffCommand implements Listener,  CommandExecutor {
 	player.getInventory().clear();
 	player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Disable!");
     }
-
     @EventHandler
     public void rightClick(PlayerInteractEntityEvent event) { // Playerが左クリックした時
 	if(!(event.getRightClicked() instanceof Player)) {
@@ -79,8 +82,8 @@ public class StaffCommand implements Listener,  CommandExecutor {
 	}
 	Player Player1 = event.getPlayer();
 	Player Player2 = (Player)event.getRightClicked();
-	Player1.sendMessage("1");
-	Player2.sendMessage("2");
+
+
     }
 
 
