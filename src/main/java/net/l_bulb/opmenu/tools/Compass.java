@@ -18,15 +18,14 @@ public class Compass implements Listener{
 	    Block target = getTargetBlock(player);
 	    if (target != null) {
 		player.teleport(target.getLocation());
-		player.sendMessage(ChatColor.GREEN + "[OpMenu]" + ChatColor.YELLOW +  " Teleported.");
+		player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.YELLOW +  "Teleported.");
 	    }
 	}
-
     }
 
     private Block getTargetBlock(Player player) {
 
-	BlockIterator it = new BlockIterator(player, 150);
+	BlockIterator it = new BlockIterator(player, 100);
 
 	while ( it.hasNext()) {
 
@@ -36,7 +35,7 @@ public class Compass implements Listener{
 	    }
 
 	}
-	player.sendMessage(ChatColor.GREEN + "[OpMenu]" + ChatColor.RED +  " Block Not Found.");
+	player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.RED +  "Block Not Found.");
 	return null;
     }
 
