@@ -7,16 +7,20 @@ import net.l_bulb.opmenu.Commands.MenuCommand;
 import net.l_bulb.opmenu.Commands.StaffCommand;
 import net.l_bulb.opmenu.Listener.MenuListener;
 import net.l_bulb.opmenu.Listener.StaffListener;
-import net.l_bulb.opmenu.tools.Compass;;
+import net.l_bulb.opmenu.tools.Compass;
+import net.l_bulb.opmenu.tools.Shears;
 
 public class OpMenu extends JavaPlugin {
     @Override
     public void onEnable() {
-        getCommand("fly").setExecutor(new FlyCommand());
         getCommand("staff").setExecutor(new StaffCommand());
         getCommand("menu").setExecutor(new MenuCommand());
+        getCommand("fly").setExecutor(new FlyCommand());
+        getServer().getPluginManager().registerEvents(new StaffCommand(), this);
         getServer().getPluginManager().registerEvents(new MenuListener(), this);
         getServer().getPluginManager().registerEvents(new StaffListener(), this);
         getServer().getPluginManager().registerEvents(new Compass(), this);
+        getServer().getPluginManager().registerEvents(new Shears(), this);
     }
+
 }
