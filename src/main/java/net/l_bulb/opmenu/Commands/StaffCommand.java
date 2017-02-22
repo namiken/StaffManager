@@ -1,7 +1,6 @@
 package net.l_bulb.opmenu.Commands;
 
 import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -70,11 +69,6 @@ public class StaffCommand implements Listener,  CommandExecutor {
 	player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Enable!");
     }
 
-    public static void onDisableStaffMode(Player player) {
-	player.setGameMode(GameMode.SURVIVAL);
-	player.getInventory().clear();
-	player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Disable!");
-    }
     @EventHandler
     public void rightClick(PlayerInteractEntityEvent event) { // Playerが左クリックした時
 	if(!(event.getRightClicked() instanceof Player)) {
