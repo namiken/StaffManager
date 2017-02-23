@@ -1,6 +1,7 @@
 package net.l_bulb.opmenu.StaffUtilitys;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -13,14 +14,20 @@ public class Compass implements Listener {
 
     @EventHandler
     public void CompassLeftClickEvent(PlayerInteractEvent event) {
-	if(event.getPlayer().hasPermission("staff.staff.tool")) {
+	if(!event.getPlayer().hasPermission("staff.staff.tool")) {
 	    return;
 	}
 	if(event.getPlayer().getItemInHand().getType() == Material.COMPASS) {
 	Player player =event.getPlayer();
 	    Block target = getTargetBlock(player);
 	    if (target != null) {
-		player.teleport(target.getLocation());
+		float pitch = player.getLocation().getPitch();
+		float yaw = player.getLocation().getYaw();
+
+		Location to = target.getLocation();
+		to.setPitch(pitch);
+		to.setYaw(yaw);
+		player.teleport(to);
 		player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.YELLOW +  "Teleported.");
 
 	    }
