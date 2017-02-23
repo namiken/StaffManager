@@ -14,3 +14,7 @@ commands:
     description: Staff
     usage: /<command>
     permission: staff.staff
+  cc:
+    description: chatclear
+    usage: /<command>
+    permission: staff.Clear

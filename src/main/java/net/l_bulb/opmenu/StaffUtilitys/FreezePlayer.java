@@ -1,5 +1,8 @@
 package net.l_bulb.opmenu.StaffUtilitys;
 
-public class FreezePlayer {
+import org.bukkit.event.Listener;
+
+public class FreezePlayer implements Listener {
+    
 
 }

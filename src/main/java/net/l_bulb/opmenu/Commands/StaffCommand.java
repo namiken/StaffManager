@@ -32,12 +32,10 @@ public class StaffCommand implements Listener,  CommandExecutor {
 
     @EventHandler
     public void rightClick(PlayerInteractEntityEvent event) { // Playerが左クリックした時
-	if(!(event.getRightClicked() instanceof Player)) {
+
+	if(!event.getPlayer().hasPermission("staff.staff.event")){
 	    return;
 	}
-	Player Player1 = event.getPlayer();
-	Player Player2 = (Player)event.getRightClicked();
-
 
     }
 
