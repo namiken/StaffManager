@@ -9,6 +9,7 @@ import net.l_bulb.opmenu.Commands.StaffCommand;
 import net.l_bulb.opmenu.Listener.MenuListener;
 import net.l_bulb.opmenu.StaffUtilitys.Compass;
 import net.l_bulb.opmenu.StaffUtilitys.HealthCheck;
+import net.l_bulb.opmenu.StaffUtilitys.InventoryCheck;
 import net.l_bulb.opmenu.StaffUtilitys.RandomTeleport;
 
 public class OpMenu extends JavaPlugin {
@@ -23,6 +24,7 @@ public class OpMenu extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Compass(), this);
         getServer().getPluginManager().registerEvents(new HealthCheck(), this);
         getServer().getPluginManager().registerEvents(new RandomTeleport(), this);
+        getServer().getPluginManager().registerEvents(new InventoryCheck(), this);
     }
 
 }
