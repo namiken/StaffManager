@@ -42,7 +42,7 @@ public class StaffCommand implements Listener, CommandExecutor {
       StaffItems.addstaffItems(player);
       player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Enable!");
       staffs.add(player.getUniqueId().toString());
-      player.setFlying(true);
+      player.setAllowFlight(true);
       player.setGameMode(GameMode.SURVIVAL);
     }
 
@@ -50,7 +50,7 @@ public class StaffCommand implements Listener, CommandExecutor {
       player.getInventory().clear();
       player.sendMessage(ChatColor.RED + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Disable!");
       staffs.remove(player.getUniqueId().toString());
-      player.setFlying(false);
+      player.setAllowFlight(false);
       player.setGameMode(GameMode.SURVIVAL);
     }
 
