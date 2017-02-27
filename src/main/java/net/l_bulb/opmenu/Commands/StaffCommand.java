@@ -53,7 +53,6 @@ public class StaffCommand implements Listener, CommandExecutor {
       player.setAllowFlight(false);
       player.setGameMode(GameMode.SURVIVAL);
     }
-
     public static boolean isInStaffMode(Player player) {
       return staffs.contains(player.getUniqueId().toString());
     }

@@ -24,7 +24,6 @@ public class Compass implements Listener {
 	    if (target != null) {
 		float pitch = player.getLocation().getPitch();
 		float yaw = player.getLocation().getYaw();
-
 		Location to = target.getLocation();
 		to.setPitch(pitch);
 		to.setYaw(yaw);
