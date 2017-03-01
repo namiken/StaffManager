@@ -37,36 +37,36 @@ public class FreezePlayer implements Listener {
      * FreazeさせたPlayerコレクションにぶち込む部分
      */
 
-    private static HashMap<Player, Location> Freaze = new HashMap<Player, Location>();
+    private static HashMap<Player, Location> Freeze = new HashMap<Player, Location>();
 
     private static void onFreazeEnable(Player target) {
-	Freaze.put(target, target.getLocation());
-	target.sendMessage(ChatColor.RED + "⚠管理者によって規制されました"); // TODO
-							       // movingeventを叩く
+	Freeze.put(target, target.getLocation());
+	target.sendMessage(ChatColor.RED + "⚠管理者によって規制されました");
     }
 
     private static void onFreazeDisable(Player target) {
-	Freaze.remove(target, target.getLocation()); // TODO
-						     // movingeventを叩く
+	Freeze.remove(target, target.getLocation());
 	target.sendMessage(ChatColor.GREEN + "規制が解除されました");
     }
 
     @EventHandler
     private void movingEvent(PlayerMoveEvent event) {
-	if (isFreaze(event.getPlayer())) {
-
+	if (!isFreaze(event.getPlayer())) {
+	    return;
 	}
 
-	if (Freaze.containsKey(event.getPlayer().getUniqueId().toString())) {
+	if (!Freeze.containsKey(event.getPlayer().getUniqueId().toString())) {
+	    return;
+	}
+	if (!Freeze.containsValue(event.getPlayer().getLocation())) {
+	    event.getPlayer().teleport((Location) Freeze.values());
 	    event.getPlayer().sendMessage(ChatColor.RED + "⚠ 動きが規制されています");
 	}
 
     }
 
-    //
-
     public static boolean isFreaze(Player target) {
-	return Freaze.containsKey(target);
+	return Freeze.containsKey(target);
     }
 
 }
