@@ -36,7 +36,7 @@ public class Compass implements Listener {
 
     private Block getTargetBlock(Player player) {
 
-	BlockIterator it = new BlockIterator(player, 100);
+	BlockIterator it = new BlockIterator(player, 150);
 
 	while (it.hasNext()) {
 
