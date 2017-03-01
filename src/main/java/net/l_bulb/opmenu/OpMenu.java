@@ -1,5 +1,7 @@
 package net.l_bulb.opmenu;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import net.l_bulb.opmenu.Commands.ClearChatCommand;
@@ -16,6 +18,13 @@ import net.l_bulb.opmenu.StaffUtilitys.RandomTeleport;
 public class OpMenu extends JavaPlugin {
     @Override
     public void onEnable() {
+	// 起動時Permissionを持っている人は全員Staff Mode Enableにする
+	Player player =  (Player) Bukkit.getServer().getOnlinePlayers();
+	if (IsStaff.isStaff(player)) {
+	    StaffCommand.onEnableStaffMode(player);
+	}
+
+	// registers
 	onCommands();
 	onEvents();
     }
