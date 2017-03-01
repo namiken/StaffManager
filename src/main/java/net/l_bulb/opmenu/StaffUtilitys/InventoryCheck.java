@@ -39,7 +39,9 @@ public class InventoryCheck implements Listener {
 
 	ItemMeta HealthMeta = Health.getItemMeta();
 	HealthMeta.setDisplayName(target.getDisplayName() + "has" + target.getHealth() + "Health");
+
 	Inventory inv = Bukkit.createInventory(player, 45, target.getDisplayName() + " Inventory!");
+
 	inv.setContents(items);
 	player.openInventory(inv);
 	inv.setItem(36, helmet);
