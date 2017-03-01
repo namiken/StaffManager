@@ -25,18 +25,18 @@ public class OpMenu extends JavaPlugin {
 	}
 
 	// registers
-	onCommands();
-	onEvents();
+	onCommandRegister();
+	onEventRegiser();
     }
 
-    public void onCommands() {
+    public void onCommandRegister() {
 	getCommand("staff").setExecutor(new StaffCommand());
 	getCommand("menu").setExecutor(new MenuCommand());
 	getCommand("fly").setExecutor(new FlyCommand());
 	getCommand("cc").setExecutor(new ClearChatCommand());
     }
 
-    public void onEvents() {
+    public void onEventRegiser() {
 	getServer().getPluginManager().registerEvents(new StaffCommand(), this);
 	getServer().getPluginManager().registerEvents(new MenuListener(), this);
 	getServer().getPluginManager().registerEvents(new Compass(), this);
