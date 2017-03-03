@@ -32,13 +32,13 @@ public class StaffCommand implements Listener, CommandExecutor {
   
   public static void toggleStaffMode(Player player) {
     if (!isInStaffMode(player)) {
-      onEnableStaffMode(player);
+      enableStaffMode(player);
     } else {
-      onDisableStaffMode(player);
+      disableStaffMode(player);
     }
   }
   
-  public static void onEnableStaffMode(Player player) {
+  public static void enableStaffMode(Player player) {
     player.getInventory().clear();
     StaffItems.addstaffItems(player);
     player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Enable!");
@@ -47,7 +47,7 @@ public class StaffCommand implements Listener, CommandExecutor {
     player.setGameMode(GameMode.SURVIVAL);
   }
   
-  public static void onDisableStaffMode(Player player) {
+  public static void disableStaffMode(Player player) {
     player.getInventory().clear();
     player.sendMessage(ChatColor.RED + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Disable!");
     staffs.remove(player.getUniqueId().toString());
