@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu.Commands;
+package com.github.favreyo.staffmanager.commands;
 
 import java.util.HashMap;
 import java.util.Objects;

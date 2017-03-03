@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu.Listener;
+package com.github.favreyo.staffmanager.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

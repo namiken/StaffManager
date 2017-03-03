@@ -1,19 +1,19 @@
-package net.l_bulb.opmenu;
+package com.github.favreyo.staffmanager;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import net.l_bulb.opmenu.Commands.ClearChatCommand;
-import net.l_bulb.opmenu.Commands.FlyCommand;
-import net.l_bulb.opmenu.Commands.FreezeCommand;
-import net.l_bulb.opmenu.Commands.MenuCommand;
-import net.l_bulb.opmenu.Commands.StaffCommand;
-import net.l_bulb.opmenu.Listener.MenuListener;
-import net.l_bulb.opmenu.StaffUtilitys.Compass;
-import net.l_bulb.opmenu.StaffUtilitys.HealthCheck;
-import net.l_bulb.opmenu.StaffUtilitys.InventoryCheck;
-import net.l_bulb.opmenu.StaffUtilitys.RandomTeleport;
+import com.github.favreyo.staffmanager.commands.ClearChatCommand;
+import com.github.favreyo.staffmanager.commands.FlyCommand;
+import com.github.favreyo.staffmanager.commands.FreezeCommand;
+import com.github.favreyo.staffmanager.commands.MenuCommand;
+import com.github.favreyo.staffmanager.commands.StaffCommand;
+import com.github.favreyo.staffmanager.listener.MenuListener;
+import com.github.favreyo.staffmanager.staffutilitys.Compass;
+import com.github.favreyo.staffmanager.staffutilitys.HealthCheck;
+import com.github.favreyo.staffmanager.staffutilitys.InventoryCheck;
+import com.github.favreyo.staffmanager.staffutilitys.RandomTeleport;
 
-public class OpMenu extends JavaPlugin {
+public class StaffManager extends JavaPlugin {
     @Override
     public void onEnable() {
 	// registers

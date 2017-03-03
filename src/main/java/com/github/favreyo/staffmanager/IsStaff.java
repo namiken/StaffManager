@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu;
+package com.github.favreyo.staffmanager;
 
 import org.bukkit.entity.Player;
 

@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu.StaffUtilitys;
+package com.github.favreyo.staffmanager.staffutilitys;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

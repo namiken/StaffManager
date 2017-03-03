@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu;
+package com.github.favreyo.staffmanager;
 
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -12,7 +12,7 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 
-import net.l_bulb.opmenu.Commands.StaffCommand;
+import com.github.favreyo.staffmanager.commands.StaffCommand;
 
 public class EventCancel implements Listener {
 

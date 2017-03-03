@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu.StaffUtilitys;
+package com.github.favreyo.staffmanager.staffutilitys;
 
 import java.util.ArrayList;
 import java.util.List;

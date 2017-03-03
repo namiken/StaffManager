@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu.Commands;
+package com.github.favreyo.staffmanager.commands;
 
 import java.util.Set;
 
@@ -10,9 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
+import com.github.favreyo.staffmanager.staffutilitys.StaffItems;
 import com.google.common.collect.Sets;
-
-import net.l_bulb.opmenu.StaffUtilitys.StaffItems;
 
 public class StaffCommand implements Listener, CommandExecutor {
     @Override
