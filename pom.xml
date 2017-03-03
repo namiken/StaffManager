@@ -11,6 +11,12 @@
     <spigot.version>${spigot_api.version}</spigot.version>
   </properties>
   <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
