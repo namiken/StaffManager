@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.l_bulb.opmenu</groupId>
   <artifactId>OpMenu</artifactId>
@@ -6,6 +7,8 @@
   <properties>
     <java.source_version>1.8</java.source_version>
     <java.target_version>1.8</java.target_version>
+    <spigot_api.version>1.8-R0.1-SNAPSHOT</spigot_api.version>
+    <spigot.version>${spigot_api.version}</spigot.version>
   </properties>
   <build>
     <plugins>
@@ -29,7 +32,7 @@
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
-      <version>1.8-R0.1-SNAPSHOT</version>
+      <version>${spigot_api.version}</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
