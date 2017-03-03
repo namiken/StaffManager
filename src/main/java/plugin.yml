@@ -18,3 +18,6 @@ commands:
     description: chatclear
     usage: /<command>
     permission: staff.Clear
+  freeze:
+    description: Freeze
+    usage: /<command>
