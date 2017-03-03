@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu.Commands;
+package net.l_bulb.opmenu.command;
 
 import java.util.HashMap;
 import java.util.Objects;

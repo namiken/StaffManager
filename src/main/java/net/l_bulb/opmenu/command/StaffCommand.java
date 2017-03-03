@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu.Commands;
+package net.l_bulb.opmenu.command;
 
 import java.util.Set;
 
@@ -12,7 +12,7 @@ import org.bukkit.event.Listener;
 
 import com.google.common.collect.Sets;
 
-import net.l_bulb.opmenu.StaffUtilitys.StaffItems;
+import net.l_bulb.opmenu.utilities.StaffItems;
 
 public class StaffCommand implements Listener, CommandExecutor {
     @Override

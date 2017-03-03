@@ -2,16 +2,16 @@ package net.l_bulb.opmenu;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import net.l_bulb.opmenu.Commands.ClearChatCommand;
-import net.l_bulb.opmenu.Commands.FlyCommand;
-import net.l_bulb.opmenu.Commands.FreezeCommand;
-import net.l_bulb.opmenu.Commands.MenuCommand;
-import net.l_bulb.opmenu.Commands.StaffCommand;
-import net.l_bulb.opmenu.Listener.MenuListener;
-import net.l_bulb.opmenu.StaffUtilitys.Compass;
-import net.l_bulb.opmenu.StaffUtilitys.HealthCheck;
-import net.l_bulb.opmenu.StaffUtilitys.InventoryCheck;
-import net.l_bulb.opmenu.StaffUtilitys.RandomTeleport;
+import net.l_bulb.opmenu.command.ClearChatCommand;
+import net.l_bulb.opmenu.command.FlyCommand;
+import net.l_bulb.opmenu.command.FreezeCommand;
+import net.l_bulb.opmenu.command.MenuCommand;
+import net.l_bulb.opmenu.command.StaffCommand;
+import net.l_bulb.opmenu.listener.MenuListener;
+import net.l_bulb.opmenu.utilities.Compass;
+import net.l_bulb.opmenu.utilities.HealthCheck;
+import net.l_bulb.opmenu.utilities.InventoryCheck;
+import net.l_bulb.opmenu.utilities.RandomTeleport;
 
 public class OpMenu extends JavaPlugin {
     @Override

@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu.StaffUtilitys;
+package net.l_bulb.opmenu.utilities;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

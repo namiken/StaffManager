@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu.StaffUtilitys;
+package net.l_bulb.opmenu.utilities;
 
 import java.util.ArrayList;
 import java.util.List;

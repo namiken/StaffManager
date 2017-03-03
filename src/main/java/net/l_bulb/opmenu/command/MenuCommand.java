@@ -1,11 +1,11 @@
-package net.l_bulb.opmenu.Commands;
+package net.l_bulb.opmenu.command;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import net.l_bulb.opmenu.Listener.MenuListener;
+import net.l_bulb.opmenu.listener.MenuListener;
 
 public class MenuCommand implements CommandExecutor {
     @Override

@@ -1,4 +1,4 @@
-package net.l_bulb.opmenu.Listener;
+package net.l_bulb.opmenu.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
