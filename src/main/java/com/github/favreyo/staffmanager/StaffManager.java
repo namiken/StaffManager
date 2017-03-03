@@ -12,6 +12,7 @@ import com.github.favreyo.staffmanager.staffutilitys.Compass;
 import com.github.favreyo.staffmanager.staffutilitys.HealthCheck;
 import com.github.favreyo.staffmanager.staffutilitys.InventoryCheck;
 import com.github.favreyo.staffmanager.staffutilitys.RandomTeleport;
+import com.github.favreyo.staffmanager.staffutilitys.StaffGUI;
 
 public class StaffManager extends JavaPlugin {
     @Override
@@ -37,5 +38,6 @@ public class StaffManager extends JavaPlugin {
 	getServer().getPluginManager().registerEvents(new RandomTeleport(), this);
 	getServer().getPluginManager().registerEvents(new InventoryCheck(), this);
 	getServer().getPluginManager().registerEvents(new EventCancel(), this);
+	getServer().getPluginManager().registerEvents(new StaffGUI(), this);
     }
 }

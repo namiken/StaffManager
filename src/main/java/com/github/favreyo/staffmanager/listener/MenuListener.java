@@ -12,6 +12,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class MenuListener implements Listener {
+
+
+
     static ItemStack Vanish = new ItemStack(Material.GLASS);
     static ItemStack Fly = new ItemStack(Material.FEATHER);
     static {
@@ -25,7 +28,7 @@ public class MenuListener implements Listener {
         Fly.setItemMeta(FlyMeta);
     }
 
-    public void MenuCreate(Player player) {
+    public static void MenuCreate(Player player) {
         Inventory inv = Bukkit.createInventory(null, 9, "OpMenu" );
         inv.setItem(0, Vanish);
         inv.setItem(2, Fly);
