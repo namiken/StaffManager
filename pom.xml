@@ -3,14 +3,18 @@
   <groupId>net.l_bulb.opmenu</groupId>
   <artifactId>OpMenu</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+    <java.source_version>1.8</java.source_version>
+    <java.target_version>1.8</java.target_version>
+  </properties>
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>${java.source_version}</source>
+          <target>${java.target_version}</target>
         </configuration>
       </plugin>
     </plugins>
