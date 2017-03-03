@@ -1,6 +1,7 @@
 package net.l_bulb.opmenu.command;
 
 import java.util.Set;
+import java.util.UUID;
 
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -28,7 +29,7 @@ public class StaffCommand implements Listener, CommandExecutor {
     return true;
   }
   
-  private static Set<String> staffs = Sets.newHashSet();
+  private static Set<UUID> staffs = Sets.newHashSet();
   
   public static void toggleStaffMode(Player player) {
     if (!isInStaffMode(player)) {
@@ -42,7 +43,7 @@ public class StaffCommand implements Listener, CommandExecutor {
     player.getInventory().clear();
     StaffItems.addstaffItems(player);
     player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Enable!");
-    staffs.add(player.getUniqueId().toString());
+    staffs.add(player.getUniqueId());
     player.setAllowFlight(true);
     player.setGameMode(GameMode.SURVIVAL);
   }
@@ -50,12 +51,12 @@ public class StaffCommand implements Listener, CommandExecutor {
   public static void disableStaffMode(Player player) {
     player.getInventory().clear();
     player.sendMessage(ChatColor.RED + "[OpMenu] " + ChatColor.GOLD + "Staff Mode >> Disable!");
-    staffs.remove(player.getUniqueId().toString());
+    staffs.remove(player.getUniqueId());
     player.setAllowFlight(false);
     player.setGameMode(GameMode.SURVIVAL);
   }
   
   public static boolean isInStaffMode(Player player) {
-    return staffs.contains(player.getUniqueId().toString());
+    return staffs.contains(player.getUniqueId());
   }
 }
