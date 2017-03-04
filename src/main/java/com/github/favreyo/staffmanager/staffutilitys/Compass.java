@@ -7,7 +7,6 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.BlockIterator;
 
@@ -28,7 +27,6 @@ public class Compass implements Listener {
 		to.setPitch(pitch);
 		to.setYaw(yaw);
 		player.teleport(to);
-		player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.YELLOW + "Teleported.");
 
 	    }
 	}
@@ -48,11 +46,5 @@ public class Compass implements Listener {
 	}
 	player.sendMessage(ChatColor.GREEN + "[OpMenu] " + ChatColor.RED + "Block Not Found.");
 	return null;
-    }
-    @EventHandler
-    public static void compassEventCancel(BlockBreakEvent event) {
-	if (event.getPlayer().getItemInHand().getType() == Material.COMPASS) {
-	    event.setCancelled(true);
-	}
     }
 }
