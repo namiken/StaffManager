@@ -21,3 +21,8 @@ commands:
   freeze:
     description: Freeze
     usage: /<command>
+	permission: staff.freeze
+  freezes:
+    description: FreezeList
+    usage: /<command>
+	permission: staff.freeze
