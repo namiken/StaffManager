@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.github.favreyo.staffmanager.commands.ClearChatCommand;
 import com.github.favreyo.staffmanager.commands.FlyCommand;
 import com.github.favreyo.staffmanager.commands.FreezeCommand;
+import com.github.favreyo.staffmanager.commands.FreezesCommand;
 import com.github.favreyo.staffmanager.commands.MenuCommand;
 import com.github.favreyo.staffmanager.commands.StaffCommand;
 import com.github.favreyo.staffmanager.listener.MenuListener;
@@ -28,6 +29,7 @@ public class StaffManager extends JavaPlugin {
 	getCommand("fly").setExecutor(new FlyCommand());
 	getCommand("cc").setExecutor(new ClearChatCommand());
 	getCommand("freeze").setExecutor(new FreezeCommand());
+	getCommand("freezes").setExecutor(new FreezesCommand());
     }
 
     public void onEventRegiser() {
