@@ -18,7 +18,7 @@ public class FreezeCommand implements CommandExecutor, Listener {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args) {
 	if (!(sender instanceof Player)) {
-	    sender.sendMessage(ChatColor.RED + "コンソールから実行できません");
+	    sender.sendMessage("コンソールから実行できません");
 	    return true;
 	}
 	if (args.length == 0) {
