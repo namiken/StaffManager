@@ -39,5 +39,6 @@ public class StaffManager extends JavaPlugin {
 	getServer().getPluginManager().registerEvents(new InventoryCheck(), this);
 	getServer().getPluginManager().registerEvents(new EventCancel(), this);
 	getServer().getPluginManager().registerEvents(new StaffGUI(), this);
+	getServer().getPluginManager().registerEvents(new FreezeCommand(), this);
     }
 }

@@ -1,7 +1,6 @@
 package com.github.favreyo.staffmanager.commands;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -19,24 +18,22 @@ public class FreezeCommand implements CommandExecutor, Listener {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args) {
 	if (!(sender instanceof Player)) {
-	    sender.sendMessage("コンソールから実行できません");
+	    sender.sendMessage(ChatColor.RED + "コンソールから実行できません");
 	    return true;
 	}
 	if (args.length == 0) {
 	    sender.sendMessage(ChatColor.RED + "Playerを入力してください。");
 	    return true;
-	} else {
-	    sender.sendMessage("message");
 	}
-
-	if (Objects.equals(Bukkit.getOnlinePlayers().toString(), args[0])) {
-	    sender.sendMessage(ChatColor.GREEN + args[0].toString() + " is on line");
-	} else {
+	Player online = Bukkit.getPlayerExact(args[0]);
+	if (online == null) {
 	    sender.sendMessage(ChatColor.RED + args[0].toString() + " is off line");
+	} else {
+	    sender.sendMessage(ChatColor.GREEN + args[0].toString() + "の動きを規制します");
+	    Player target = (Player) sender;
+	    toggleFreaze(target);
 	}
 
-	Player target = (Player) sender;
-	toggleFreaze(target);
 	return true;
     }
 
@@ -48,52 +45,28 @@ public class FreezeCommand implements CommandExecutor, Listener {
 	}
     }
 
-    private static HashMap<Player, Location> Freeze = new HashMap<>();
+    private static HashMap<String, Location> Freeze = new HashMap<>();
 
     private static void onFreazeEnable(Player target) {
-	Freeze.put(target, target.getLocation());
+	Freeze.put(target.toString(), target.getLocation());
 	target.sendMessage(ChatColor.RED + "⚠管理者によって規制されました");
     }
 
     private static void onFreazeDisable(Player target) {
-	Freeze.remove(target, target.getLocation());
+	Freeze.remove(target.toString());
 	target.sendMessage(ChatColor.GREEN + "規制が解除されました");
     }
 
     @EventHandler
     public void movingEvent(PlayerMoveEvent event) {
 	if (isFreaze(event.getPlayer())) {
-	    Location loc = event.getFrom();
-	    event.getPlayer().teleport(loc);
 	    event.getPlayer().sendMessage(ChatColor.RED + "⚠ 動きが規制されています");
-	    return;
-
-	} else {
-	    event.getPlayer().sendMessage("Not Freease");
-	}
-
-	if (!Freeze.containsKey(event.getPlayer().getUniqueId().toString())) {
-	    return;
-	}
-	if (!Freeze.containsValue(event.getPlayer().getLocation())) {
-	    event.getPlayer().teleport((Location) Freeze.values());
-	    event.getPlayer().sendMessage(ChatColor.RED + "⚠ 動きが規制されています");
+	    event.getPlayer().teleport(Freeze.get(event.getPlayer().toString()));
 	}
     }
 
     public static boolean isFreaze(Player target) {
-	return Freeze.containsKey(target);
+	return Freeze.containsKey(target.toString());
     }
-
-    public boolean isPlyerOnline(Player target) {
-	if (Bukkit.getServer().getOnlinePlayers() == target) {
-	    return true;
-	} else {
-	    return false;
-	}
-
-    }
-
-
 
 }
