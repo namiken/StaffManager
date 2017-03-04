@@ -1,6 +1,7 @@
 package com.github.favreyo.staffmanager.commands;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -22,7 +23,13 @@ public class FreezeCommand implements CommandExecutor, Listener {
 	    return true;
 	}
 	if (args.length == 0) {
-	    sender.sendMessage(ChatColor.RED + "Playerを入力してください。");
+	    sender.sendMessage(ChatColor.RED + "Playerを入力してください。Freezeしている人を表示:/Freeze -list");
+	    return true;
+	}
+	if (Objects.equals(args[0], "-list")) {
+	    for (String s : Freeze.keySet()) {
+		sender.sendMessage(s);
+	    }
 	    return true;
 	}
 	Player online = Bukkit.getPlayerExact(args[0]);
@@ -33,39 +40,39 @@ public class FreezeCommand implements CommandExecutor, Listener {
 	    Player target = (Player) sender;
 	    toggleFreaze(target);
 	}
-
 	return true;
+
     }
 
     private static void toggleFreaze(Player target) {
-	if (!isFreaze(target)) {
-	    onFreazeEnable(target);
+	if (!isFreeze(target)) {
+	    onFreezeEnable(target);
 	} else {
-	    onFreazeDisable(target);
+	    onFreezeDisable(target);
 	}
     }
 
     private static HashMap<String, Location> Freeze = new HashMap<>();
 
-    private static void onFreazeEnable(Player target) {
+    private static void onFreezeEnable(Player target) {
 	Freeze.put(target.toString(), target.getLocation());
 	target.sendMessage(ChatColor.RED + "⚠管理者によって規制されました");
     }
 
-    private static void onFreazeDisable(Player target) {
+    private static void onFreezeDisable(Player target) {
 	Freeze.remove(target.toString());
 	target.sendMessage(ChatColor.GREEN + "規制が解除されました");
     }
 
     @EventHandler
     public void movingEvent(PlayerMoveEvent event) {
-	if (isFreaze(event.getPlayer())) {
+	if (isFreeze(event.getPlayer())) {
 	    event.getPlayer().sendMessage(ChatColor.RED + "⚠ 動きが規制されています");
 	    event.getPlayer().teleport(Freeze.get(event.getPlayer().toString()));
 	}
     }
 
-    public static boolean isFreaze(Player target) {
+    public static boolean isFreeze(Player target) {
 	return Freeze.containsKey(target.toString());
     }
 
