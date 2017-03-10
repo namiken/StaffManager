@@ -1,4 +1,4 @@
-name: OPMenu
+name: StaffManager
 main: com.github.favreyo.staffmanager.StaffManager
 version: 1.0.0
 commands:
@@ -21,8 +21,8 @@ commands:
   freeze:
     description: Freeze
     usage: /<command>
-	permission: staff.freeze
+    permission: staff.freeze
   freezes:
     description: FreezeList
     usage: /<command>
-	permission: staff.freeze
+    permission: staff.freeze
