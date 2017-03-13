@@ -40,7 +40,8 @@ public class Compass implements Listener {
 
 	    Block block = it.next();
 	    if (block.getType() != Material.AIR) {
-		return block;
+	    	Block highestBlock = block.getWorld().getHighestBlockAt(block.getLocation());
+		return highestBlock;
 	    }
 
 	}
