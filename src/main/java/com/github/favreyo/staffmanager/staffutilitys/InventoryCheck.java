@@ -20,7 +20,8 @@ public class InventoryCheck implements Listener {
 	    return;
 	}
 
-	if (event.getPlayer().getItemInHand().getType() == Material.BOOK) {
+	//スタッフアイテムの本を持ってクリックしたならインベントリを開く
+	if (StaffItems.getStaffItemBook().equals(event.getPlayer().getItemInHand())) {
 	    Player player = event.getPlayer();
 	    Player target = (Player) event.getRightClicked();
 	    createInventory(player, target);
